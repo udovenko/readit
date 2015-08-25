@@ -1,7 +1,7 @@
+# Implements site announcement model.
+#
+# Author:: Denis Udovenko (mailto:denis.e.udovenko@gmail.com)
 module Readit
-  # Implements site announcement model.
-  #
-  # Author:: Denis Udovenko (mailto:denis.e.udovenko@gmail.com)
   class Announcement < ActiveRecord::Base
     validates :content, presence: true
     validates :start_at, presence: true

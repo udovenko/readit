@@ -1,9 +1,9 @@
+# Implements controller for announcements interactions.
+#
+# Author:: Denis Udovenko (mailto:denis.e.udovenko@gmail.com)
 module Readit
-  # Implements controller for announcements interactions.
-  #
-  # Author:: Denis Udovenko (mailto:denis.e.udovenko@gmail.com)
   class AnnouncementsController < ApplicationController
-    include Shared::Announcements::Cookie
+    include Announcements::Cookie
 
     # Stores given announcement id in cookie. Removes not actual announcement ids from
     # cookie if necessary. Updated cookie expiration time.
