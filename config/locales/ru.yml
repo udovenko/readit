@@ -1,0 +1,20 @@
+ru:
+  activerecord:
+    models:
+      readit/announcement:
+        zero: "Уведомлений"
+        one: "Уведомление"
+        few: "Уведомления"
+        many: "Уведомлений"
+    attributes:
+      readit/announcement:
+        content: "Содержимое"
+        created_at: "Дата создания"
+        is_active: "Активно"
+        start_at: "Начало показа"
+        stop_at: "Окончание показа"
+        updated_at: "Дата последнего изменения"
+    errors:
+      models:
+        readit/announcement:
+          start_time_grater_or_equal_to_end_time: "Время начала показа уведомлений не может совпадать или быть позже времени окончания показа"

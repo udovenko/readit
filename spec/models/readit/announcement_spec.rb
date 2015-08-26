@@ -37,7 +37,7 @@ describe Readit::Announcement do
       subject.valid?
       expect(subject.errors[:base]).to include\
         I18n.t!(:start_time_grater_or_equal_to_end_time,
-          scope: 'activerecord.errors.models.announcement')
+          scope: 'activerecord.errors.models.readit/announcement')
     end
   end
 

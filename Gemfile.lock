@@ -94,6 +94,8 @@ GEM
       rspec-mocks (~> 3.3.0)
       rspec-support (~> 3.3.0)
     rspec-support (3.3.0)
+    shoulda-matchers (2.8.0)
+      activesupport (>= 3.0.0)
     sprockets (3.3.3)
       rack (~> 1.0)
     sprockets-rails (2.3.2)
@@ -120,4 +122,5 @@ DEPENDENCIES
   rails (= 4.1.5)
   readit!
   rspec-rails
+  shoulda-matchers
   sqlite3

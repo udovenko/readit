@@ -222,3 +222,1101 @@
   [1m[35m (0.1ms)[0m  rollback transaction
   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
   [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.8ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.9ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (38.4ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.3ms)[0m  select sqlite_version(*)
+  [1m[36m (43.7ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.4ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateAnnouncements (20150826053025)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateReaditAnnouncements (20150826053025)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.9ms)[0m  [1mCREATE TABLE "readit_announcements" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "content" text, "is_active" boolean, "start_at" datetime, "stop_at" datetime, "content_digest" varchar(255) DEFAULT '' NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.2ms)[0m  [1mCREATE  INDEX "index_readit_announcements_on_is_active" ON "readit_announcements" ("is_active")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_readit_announcements_on_is_active' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_readit_announcements_on_is_active' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1mCREATE  INDEX "index_readit_announcements_on_start_at" ON "readit_announcements" ("start_at")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_readit_announcements_on_start_at' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_readit_announcements_on_start_at' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_readit_announcements_on_is_active' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_readit_announcements_on_is_active' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  CREATE  INDEX "index_readit_announcements_on_stop_at" ON "readit_announcements" ("stop_at")
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_readit_announcements_on_stop_at' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_readit_announcements_on_stop_at' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_readit_announcements_on_start_at' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_readit_announcements_on_start_at' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_readit_announcements_on_is_active' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_readit_announcements_on_is_active' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  CREATE  INDEX "index_readit_announcements_on_start_at_and_stop_at" ON "readit_announcements" ("start_at", "stop_at")
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_readit_announcements_on_start_at_and_stop_at' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_readit_announcements_on_start_at_and_stop_at' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_readit_announcements_on_stop_at' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_readit_announcements_on_stop_at' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_readit_announcements_on_start_at' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_readit_announcements_on_start_at' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_readit_announcements_on_is_active' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_readit_announcements_on_is_active' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1mCREATE  INDEX "index_readit_announcements_on_content_digest" ON "readit_announcements" ("content_digest")[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150826053025"]]
+  [1m[36m (29.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_readit_announcements_on_content_digest' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_readit_announcements_on_content_digest' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_readit_announcements_on_start_at_and_stop_at' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_readit_announcements_on_start_at_and_stop_at' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_readit_announcements_on_stop_at' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_readit_announcements_on_stop_at' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_readit_announcements_on_start_at' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_readit_announcements_on_start_at' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_readit_announcements_on_is_active' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_readit_announcements_on_is_active' AND type='index'
+[0m
+  [1m[36m (0.5ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["content", "AnnouncementContent1"], ["content_digest", "c189b74a655de160437fd8270074f844"], ["created_at", "2015-08-26 05:33:56.859412"], ["is_active", "t"], ["start_at", "2015-08-26 05:33:56.795378"], ["stop_at", "2015-08-29 05:33:56.795520"], ["updated_at", "2015-08-26 05:33:56.859412"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["content", "AnnouncementContent2"], ["content_digest", "df8a2bbe9d248f87557b1547541b11a9"], ["created_at", "2015-08-26 05:33:56.866480"], ["is_active", "t"], ["start_at", "2015-08-26 05:33:56.795378"], ["stop_at", "2015-08-31 05:33:56.865259"], ["updated_at", "2015-08-26 05:33:56.866480"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["content", "AnnouncementContent3"], ["content_digest", "7ca2ed445e1897893246298483871600"], ["created_at", "2015-08-26 05:33:56.868605"], ["is_active", "t"], ["start_at", "2015-08-26 05:33:56.795378"], ["stop_at", "2015-09-02 05:33:56.867741"], ["updated_at", "2015-08-26 05:33:56.868605"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSELECT MAX("readit_announcements"."stop_at") AS max_id FROM "readit_announcements"  WHERE "readit_announcements"."id" IN (2, 3, 1)[0m
+  [1m[35mReadit::Announcement Load (0.2ms)[0m  SELECT  "readit_announcements".* FROM "readit_announcements"  WHERE "readit_announcements"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "readit_announcements" ("content", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["content", "some content"], ["created_at", "2015-08-26 05:33:56.893447"], ["is_active", "t"], ["start_at", "2015-08-26 05:33:56.795378"], ["stop_at", "2015-08-29 05:33:56.795520"], ["updated_at", "2015-08-26 05:33:56.893447"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["content", "some content"], ["content_digest", "9893532233caff98cd083a116b013c0b"], ["created_at", "2015-08-26 05:33:56.897125"], ["is_active", "t"], ["start_at", "2015-08-26 05:33:56.795378"], ["stop_at", "2015-08-29 05:33:56.795520"], ["updated_at", "2015-08-26 05:33:56.897125"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["content", "AnnouncementContent4"], ["content_digest", "01ef2b432ade3af3b4e1980a7abcdef4"], ["created_at", "2015-08-26 05:33:56.901451"], ["is_active", "t"], ["start_at", "2015-08-23 05:33:56.900154"], ["stop_at", "2015-08-25 05:33:56.900329"], ["updated_at", "2015-08-26 05:33:56.901451"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["content", "AnnouncementContent5"], ["content_digest", "4a397ce8fb85b6bb8f55b01346f03516"], ["created_at", "2015-08-26 05:33:56.903880"], ["is_active", "t"], ["start_at", "2015-08-25 05:33:56.902829"], ["stop_at", "2015-08-27 05:33:56.902944"], ["updated_at", "2015-08-26 05:33:56.903880"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["content", "AnnouncementContent6"], ["content_digest", "a1edd77347c84a03d1944f06b87e5d2a"], ["created_at", "2015-08-26 05:33:56.906135"], ["is_active", "t"], ["start_at", "2015-08-27 05:33:56.905068"], ["stop_at", "2015-08-29 05:33:56.905182"], ["updated_at", "2015-08-26 05:33:56.906135"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mReadit::Announcement Load (0.2ms)[0m  SELECT "readit_announcements".* FROM "readit_announcements"  WHERE ('2015-08-26 05:33:56.907282' BETWEEN start_at AND stop_at)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["content", "AnnouncementContent10"], ["content_digest", "6a613903eb51b6fe6ab64ec7bca2e08e"], ["created_at", "2015-08-26 05:33:56.915557"], ["is_active", "t"], ["start_at", "2015-08-26 05:33:56.795378"], ["stop_at", "2015-08-29 05:33:56.795520"], ["updated_at", "2015-08-26 05:33:56.915557"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["content", "AnnouncementContent11"], ["content_digest", "226f9fb01fed4a3b2db44c153eeb0e36"], ["created_at", "2015-08-26 05:33:56.917698"], ["is_active", "f"], ["start_at", "2015-08-26 05:33:56.795378"], ["stop_at", "2015-08-29 05:33:56.795520"], ["updated_at", "2015-08-26 05:33:56.917698"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mReadit::Announcement Load (0.2ms)[0m  [1mSELECT "readit_announcements".* FROM "readit_announcements"  WHERE "readit_announcements"."is_active" = 't'[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["content", "read announcement one initial content"], ["content_digest", "d2841204c06c8f0c0376febe39225094"], ["created_at", "2015-08-26 05:33:56.922135"], ["is_active", "t"], ["start_at", "2015-08-26 05:33:56.795378"], ["stop_at", "2015-08-29 05:33:56.795520"], ["updated_at", "2015-08-26 05:33:56.922135"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["content", "read announcement two initial content"], ["content_digest", "defa9d7af85778ec063b99be9dc63993"], ["created_at", "2015-08-26 05:33:56.924289"], ["is_active", "t"], ["start_at", "2015-08-26 05:33:56.795378"], ["stop_at", "2015-08-29 05:33:56.795520"], ["updated_at", "2015-08-26 05:33:56.924289"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["content", "AnnouncementContent12"], ["content_digest", "e9fa1cf4a9a5ea30f9592cc4557542ed"], ["created_at", "2015-08-26 05:33:56.926139"], ["is_active", "t"], ["start_at", "2015-08-26 05:33:56.795378"], ["stop_at", "2015-08-29 05:33:56.795520"], ["updated_at", "2015-08-26 05:33:56.926139"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "readit_announcements" SET "content" = ?, "content_digest" = ?, "updated_at" = ? WHERE "readit_announcements"."id" = 1  [["content", "read announcement one updated content"], ["content_digest", "c158250b5b2c13e8e8c70af972ae0cd8"], ["updated_at", "2015-08-26 05:33:56.927654"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mReadit::Announcement Load (0.2ms)[0m  SELECT "readit_announcements".* FROM "readit_announcements"  WHERE (NOT (id = '1' AND content_digest = 'd2841204c06c8f0c0376febe39225094')) AND (NOT (id = '2' AND content_digest = 'defa9d7af85778ec063b99be9dc63993'))  ORDER BY "readit_announcements"."id" ASC
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["content", "read announcement one initial content"], ["content_digest", "d2841204c06c8f0c0376febe39225094"], ["created_at", "2015-08-26 05:33:56.932724"], ["is_active", "t"], ["start_at", "2015-08-26 05:33:56.795378"], ["stop_at", "2015-08-29 05:33:56.795520"], ["updated_at", "2015-08-26 05:33:56.932724"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["content", "read announcement two initial content"], ["content_digest", "defa9d7af85778ec063b99be9dc63993"], ["created_at", "2015-08-26 05:33:56.934894"], ["is_active", "t"], ["start_at", "2015-08-26 05:33:56.795378"], ["stop_at", "2015-08-29 05:33:56.795520"], ["updated_at", "2015-08-26 05:33:56.934894"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["content", "AnnouncementContent13"], ["content_digest", "c5a683daf6df218679621f56ee0ce27f"], ["created_at", "2015-08-26 05:33:56.936716"], ["is_active", "t"], ["start_at", "2015-08-26 05:33:56.795378"], ["stop_at", "2015-08-29 05:33:56.795520"], ["updated_at", "2015-08-26 05:33:56.936716"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mReadit::Announcement Load (0.2ms)[0m  SELECT "readit_announcements".* FROM "readit_announcements"  WHERE (NOT (id = '1' AND content_digest = 'd2841204c06c8f0c0376febe39225094')) AND (NOT (id = '2' AND content_digest = 'defa9d7af85778ec063b99be9dc63993'))
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["content", "read announcement one initial content"], ["content_digest", "d2841204c06c8f0c0376febe39225094"], ["created_at", "2015-08-26 05:33:56.941098"], ["is_active", "t"], ["start_at", "2015-08-26 05:33:56.795378"], ["stop_at", "2015-08-29 05:33:56.795520"], ["updated_at", "2015-08-26 05:33:56.941098"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["content", "read announcement two initial content"], ["content_digest", "defa9d7af85778ec063b99be9dc63993"], ["created_at", "2015-08-26 05:33:56.943234"], ["is_active", "t"], ["start_at", "2015-08-26 05:33:56.795378"], ["stop_at", "2015-08-29 05:33:56.795520"], ["updated_at", "2015-08-26 05:33:56.943234"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["content", "AnnouncementContent14"], ["content_digest", "8993c646b2bfca3956d4a3023c781a12"], ["created_at", "2015-08-26 05:33:56.945036"], ["is_active", "t"], ["start_at", "2015-08-26 05:33:56.795378"], ["stop_at", "2015-08-29 05:33:56.795520"], ["updated_at", "2015-08-26 05:33:56.945036"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mReadit::Announcement Load (0.2ms)[0m  SELECT "readit_announcements".* FROM "readit_announcements"  WHERE (NOT (id = '1' AND content_digest = 'd2841204c06c8f0c0376febe39225094')) AND (NOT (id = '2' AND content_digest = 'defa9d7af85778ec063b99be9dc63993'))
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["content", "read announcement one initial content"], ["content_digest", "d2841204c06c8f0c0376febe39225094"], ["created_at", "2015-08-26 05:33:56.949993"], ["is_active", "t"], ["start_at", "2015-08-26 05:33:56.795378"], ["stop_at", "2015-08-29 05:33:56.795520"], ["updated_at", "2015-08-26 05:33:56.949993"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["content", "read announcement two initial content"], ["content_digest", "defa9d7af85778ec063b99be9dc63993"], ["created_at", "2015-08-26 05:33:56.952833"], ["is_active", "t"], ["start_at", "2015-08-26 05:33:56.795378"], ["stop_at", "2015-08-29 05:33:56.795520"], ["updated_at", "2015-08-26 05:33:56.952833"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["content", "AnnouncementContent15"], ["content_digest", "bd827d909122183730be2057f79cf848"], ["created_at", "2015-08-26 05:33:56.955532"], ["is_active", "t"], ["start_at", "2015-08-26 05:33:56.795378"], ["stop_at", "2015-08-29 05:33:56.795520"], ["updated_at", "2015-08-26 05:33:56.955532"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "readit_announcements" SET "content" = ?, "content_digest" = ?, "updated_at" = ? WHERE "readit_announcements"."id" = 1[0m  [["content", "read announcement one updated content"], ["content_digest", "c158250b5b2c13e8e8c70af972ae0cd8"], ["updated_at", "2015-08-26 05:33:56.957583"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "readit_announcements" SET "content" = ?, "content_digest" = ?, "updated_at" = ? WHERE "readit_announcements"."id" = 2  [["content", "read announcement two updated content"], ["content_digest", "50defd48776962ec2fabd2affc32b190"], ["updated_at", "2015-08-26 05:33:56.958928"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mReadit::Announcement Load (0.2ms)[0m  SELECT "readit_announcements".* FROM "readit_announcements"  WHERE (NOT (id = '1' AND content_digest = 'd2841204c06c8f0c0376febe39225094')) AND (NOT (id = '2' AND content_digest = 'defa9d7af85778ec063b99be9dc63993'))  ORDER BY "readit_announcements"."id" ASC
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["content", "AnnouncementContent1"], ["content_digest", "c189b74a655de160437fd8270074f844"], ["created_at", "2015-08-26 05:40:03.429597"], ["is_active", "t"], ["start_at", "2015-08-23 05:40:03.416232"], ["stop_at", "2015-08-25 05:40:03.416472"], ["updated_at", "2015-08-26 05:40:03.429597"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["content", "AnnouncementContent2"], ["content_digest", "df8a2bbe9d248f87557b1547541b11a9"], ["created_at", "2015-08-26 05:40:03.436122"], ["is_active", "t"], ["start_at", "2015-08-25 05:40:03.434838"], ["stop_at", "2015-08-27 05:40:03.435006"], ["updated_at", "2015-08-26 05:40:03.436122"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["content", "AnnouncementContent3"], ["content_digest", "7ca2ed445e1897893246298483871600"], ["created_at", "2015-08-26 05:40:03.438517"], ["is_active", "t"], ["start_at", "2015-08-27 05:40:03.437449"], ["stop_at", "2015-08-29 05:40:03.437569"], ["updated_at", "2015-08-26 05:40:03.438517"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mReadit::Announcement Load (0.2ms)[0m  [1mSELECT "readit_announcements".* FROM "readit_announcements"  WHERE ('2015-08-26 05:40:03.439787' BETWEEN start_at AND stop_at)[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "readit_announcements" ("content", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["content", "some content"], ["created_at", "2015-08-26 05:40:03.455439"], ["is_active", "t"], ["start_at", "2015-08-26 05:40:03.243784"], ["stop_at", "2015-08-29 05:40:03.243888"], ["updated_at", "2015-08-26 05:40:03.455439"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["content", "some content"], ["content_digest", "9893532233caff98cd083a116b013c0b"], ["created_at", "2015-08-26 05:40:03.459296"], ["is_active", "t"], ["start_at", "2015-08-26 05:40:03.243784"], ["stop_at", "2015-08-29 05:40:03.243888"], ["updated_at", "2015-08-26 05:40:03.459296"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["content", "AnnouncementContent6"], ["content_digest", "a1edd77347c84a03d1944f06b87e5d2a"], ["created_at", "2015-08-26 05:40:03.474558"], ["is_active", "t"], ["start_at", "2015-08-26 05:40:03.243784"], ["stop_at", "2015-08-29 05:40:03.243888"], ["updated_at", "2015-08-26 05:40:03.474558"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["content", "AnnouncementContent7"], ["content_digest", "4af0047a4208a42ca379d0d0923c5423"], ["created_at", "2015-08-26 05:40:03.476915"], ["is_active", "f"], ["start_at", "2015-08-26 05:40:03.243784"], ["stop_at", "2015-08-29 05:40:03.243888"], ["updated_at", "2015-08-26 05:40:03.476915"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mReadit::Announcement Load (0.2ms)[0m  SELECT "readit_announcements".* FROM "readit_announcements"  WHERE "readit_announcements"."is_active" = 't'
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["content", "AnnouncementContent11"], ["content_digest", "226f9fb01fed4a3b2db44c153eeb0e36"], ["created_at", "2015-08-26 05:40:03.501722"], ["is_active", "t"], ["start_at", "2015-08-26 05:40:03.243784"], ["stop_at", "2015-08-29 05:40:03.243888"], ["updated_at", "2015-08-26 05:40:03.501722"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["content", "AnnouncementContent12"], ["content_digest", "e9fa1cf4a9a5ea30f9592cc4557542ed"], ["created_at", "2015-08-26 05:40:03.504304"], ["is_active", "t"], ["start_at", "2015-08-26 05:40:03.243784"], ["stop_at", "2015-08-31 05:40:03.503323"], ["updated_at", "2015-08-26 05:40:03.504304"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["content", "AnnouncementContent13"], ["content_digest", "c5a683daf6df218679621f56ee0ce27f"], ["created_at", "2015-08-26 05:40:03.506662"], ["is_active", "t"], ["start_at", "2015-08-26 05:40:03.243784"], ["stop_at", "2015-09-02 05:40:03.505631"], ["updated_at", "2015-08-26 05:40:03.506662"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SELECT MAX("readit_announcements"."stop_at") AS max_id FROM "readit_announcements"  WHERE "readit_announcements"."id" IN (2, 3, 1)
+  [1m[36mReadit::Announcement Load (0.2ms)[0m  [1mSELECT  "readit_announcements".* FROM "readit_announcements"  WHERE "readit_announcements"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["content", "read announcement one initial content"], ["content_digest", "d2841204c06c8f0c0376febe39225094"], ["created_at", "2015-08-26 05:40:03.514227"], ["is_active", "t"], ["start_at", "2015-08-26 05:40:03.243784"], ["stop_at", "2015-08-29 05:40:03.243888"], ["updated_at", "2015-08-26 05:40:03.514227"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["content", "read announcement two initial content"], ["content_digest", "defa9d7af85778ec063b99be9dc63993"], ["created_at", "2015-08-26 05:40:03.516590"], ["is_active", "t"], ["start_at", "2015-08-26 05:40:03.243784"], ["stop_at", "2015-08-29 05:40:03.243888"], ["updated_at", "2015-08-26 05:40:03.516590"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["content", "AnnouncementContent14"], ["content_digest", "8993c646b2bfca3956d4a3023c781a12"], ["created_at", "2015-08-26 05:40:03.518523"], ["is_active", "t"], ["start_at", "2015-08-26 05:40:03.243784"], ["stop_at", "2015-08-29 05:40:03.243888"], ["updated_at", "2015-08-26 05:40:03.518523"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mReadit::Announcement Load (0.2ms)[0m  [1mSELECT "readit_announcements".* FROM "readit_announcements"  WHERE (NOT (id = '1' AND content_digest = 'd2841204c06c8f0c0376febe39225094')) AND (NOT (id = '2' AND content_digest = 'defa9d7af85778ec063b99be9dc63993'))[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["content", "read announcement one initial content"], ["content_digest", "d2841204c06c8f0c0376febe39225094"], ["created_at", "2015-08-26 05:40:03.522718"], ["is_active", "t"], ["start_at", "2015-08-26 05:40:03.243784"], ["stop_at", "2015-08-29 05:40:03.243888"], ["updated_at", "2015-08-26 05:40:03.522718"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["content", "read announcement two initial content"], ["content_digest", "defa9d7af85778ec063b99be9dc63993"], ["created_at", "2015-08-26 05:40:03.524855"], ["is_active", "t"], ["start_at", "2015-08-26 05:40:03.243784"], ["stop_at", "2015-08-29 05:40:03.243888"], ["updated_at", "2015-08-26 05:40:03.524855"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["content", "AnnouncementContent15"], ["content_digest", "bd827d909122183730be2057f79cf848"], ["created_at", "2015-08-26 05:40:03.526709"], ["is_active", "t"], ["start_at", "2015-08-26 05:40:03.243784"], ["stop_at", "2015-08-29 05:40:03.243888"], ["updated_at", "2015-08-26 05:40:03.526709"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mReadit::Announcement Load (0.2ms)[0m  [1mSELECT "readit_announcements".* FROM "readit_announcements"  WHERE (NOT (id = '1' AND content_digest = 'd2841204c06c8f0c0376febe39225094')) AND (NOT (id = '2' AND content_digest = 'defa9d7af85778ec063b99be9dc63993'))[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["content", "read announcement one initial content"], ["content_digest", "d2841204c06c8f0c0376febe39225094"], ["created_at", "2015-08-26 05:40:03.531399"], ["is_active", "t"], ["start_at", "2015-08-26 05:40:03.243784"], ["stop_at", "2015-08-29 05:40:03.243888"], ["updated_at", "2015-08-26 05:40:03.531399"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["content", "read announcement two initial content"], ["content_digest", "defa9d7af85778ec063b99be9dc63993"], ["created_at", "2015-08-26 05:40:03.533488"], ["is_active", "t"], ["start_at", "2015-08-26 05:40:03.243784"], ["stop_at", "2015-08-29 05:40:03.243888"], ["updated_at", "2015-08-26 05:40:03.533488"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["content", "AnnouncementContent16"], ["content_digest", "a079e6799481804f67d5b7fa9003ad5b"], ["created_at", "2015-08-26 05:40:03.535313"], ["is_active", "t"], ["start_at", "2015-08-26 05:40:03.243784"], ["stop_at", "2015-08-29 05:40:03.243888"], ["updated_at", "2015-08-26 05:40:03.535313"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "readit_announcements" SET "content" = ?, "content_digest" = ?, "updated_at" = ? WHERE "readit_announcements"."id" = 1  [["content", "read announcement one updated content"], ["content_digest", "c158250b5b2c13e8e8c70af972ae0cd8"], ["updated_at", "2015-08-26 05:40:03.536764"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "readit_announcements" SET "content" = ?, "content_digest" = ?, "updated_at" = ? WHERE "readit_announcements"."id" = 2[0m  [["content", "read announcement two updated content"], ["content_digest", "50defd48776962ec2fabd2affc32b190"], ["updated_at", "2015-08-26 05:40:03.538902"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mReadit::Announcement Load (0.2ms)[0m  [1mSELECT "readit_announcements".* FROM "readit_announcements"  WHERE (NOT (id = '1' AND content_digest = 'd2841204c06c8f0c0376febe39225094')) AND (NOT (id = '2' AND content_digest = 'defa9d7af85778ec063b99be9dc63993'))  ORDER BY "readit_announcements"."id" ASC[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["content", "read announcement one initial content"], ["content_digest", "d2841204c06c8f0c0376febe39225094"], ["created_at", "2015-08-26 05:40:03.543105"], ["is_active", "t"], ["start_at", "2015-08-26 05:40:03.243784"], ["stop_at", "2015-08-29 05:40:03.243888"], ["updated_at", "2015-08-26 05:40:03.543105"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["content", "read announcement two initial content"], ["content_digest", "defa9d7af85778ec063b99be9dc63993"], ["created_at", "2015-08-26 05:40:03.545211"], ["is_active", "t"], ["start_at", "2015-08-26 05:40:03.243784"], ["stop_at", "2015-08-29 05:40:03.243888"], ["updated_at", "2015-08-26 05:40:03.545211"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["content", "AnnouncementContent17"], ["content_digest", "6db22f914f1f5ce73bfcc9df56ebe200"], ["created_at", "2015-08-26 05:40:03.547113"], ["is_active", "t"], ["start_at", "2015-08-26 05:40:03.243784"], ["stop_at", "2015-08-29 05:40:03.243888"], ["updated_at", "2015-08-26 05:40:03.547113"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "readit_announcements" SET "content" = ?, "content_digest" = ?, "updated_at" = ? WHERE "readit_announcements"."id" = 1  [["content", "read announcement one updated content"], ["content_digest", "c158250b5b2c13e8e8c70af972ae0cd8"], ["updated_at", "2015-08-26 05:40:03.548635"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mReadit::Announcement Load (0.2ms)[0m  SELECT "readit_announcements".* FROM "readit_announcements"  WHERE (NOT (id = '1' AND content_digest = 'd2841204c06c8f0c0376febe39225094')) AND (NOT (id = '2' AND content_digest = 'defa9d7af85778ec063b99be9dc63993'))  ORDER BY "readit_announcements"."id" ASC
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["content", "AnnouncementContent1"], ["content_digest", "c189b74a655de160437fd8270074f844"], ["created_at", "2015-08-26 05:44:55.163191"], ["is_active", "t"], ["start_at", "2015-08-26 05:44:54.985759"], ["stop_at", "2015-08-29 05:44:54.985884"], ["updated_at", "2015-08-26 05:44:55.163191"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["content", "AnnouncementContent2"], ["content_digest", "df8a2bbe9d248f87557b1547541b11a9"], ["created_at", "2015-08-26 05:44:55.168923"], ["is_active", "f"], ["start_at", "2015-08-26 05:44:54.985759"], ["stop_at", "2015-08-29 05:44:54.985884"], ["updated_at", "2015-08-26 05:44:55.168923"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mReadit::Announcement Load (0.2ms)[0m  SELECT "readit_announcements".* FROM "readit_announcements"  WHERE "readit_announcements"."is_active" = 't'
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "readit_announcements" ("content", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["content", "some content"], ["created_at", "2015-08-26 05:44:55.188775"], ["is_active", "t"], ["start_at", "2015-08-26 05:44:54.985759"], ["stop_at", "2015-08-29 05:44:54.985884"], ["updated_at", "2015-08-26 05:44:55.188775"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["content", "some content"], ["content_digest", "9893532233caff98cd083a116b013c0b"], ["created_at", "2015-08-26 05:44:55.192499"], ["is_active", "t"], ["start_at", "2015-08-26 05:44:54.985759"], ["stop_at", "2015-08-29 05:44:54.985884"], ["updated_at", "2015-08-26 05:44:55.192499"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["content", "read announcement one initial content"], ["content_digest", "d2841204c06c8f0c0376febe39225094"], ["created_at", "2015-08-26 05:44:55.208592"], ["is_active", "t"], ["start_at", "2015-08-26 05:44:54.985759"], ["stop_at", "2015-08-29 05:44:54.985884"], ["updated_at", "2015-08-26 05:44:55.208592"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["content", "read announcement two initial content"], ["content_digest", "defa9d7af85778ec063b99be9dc63993"], ["created_at", "2015-08-26 05:44:55.210826"], ["is_active", "t"], ["start_at", "2015-08-26 05:44:54.985759"], ["stop_at", "2015-08-29 05:44:54.985884"], ["updated_at", "2015-08-26 05:44:55.210826"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["content", "AnnouncementContent5"], ["content_digest", "4a397ce8fb85b6bb8f55b01346f03516"], ["created_at", "2015-08-26 05:44:55.212709"], ["is_active", "t"], ["start_at", "2015-08-26 05:44:54.985759"], ["stop_at", "2015-08-29 05:44:54.985884"], ["updated_at", "2015-08-26 05:44:55.212709"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "readit_announcements" SET "content" = ?, "content_digest" = ?, "updated_at" = ? WHERE "readit_announcements"."id" = 1[0m  [["content", "read announcement one updated content"], ["content_digest", "c158250b5b2c13e8e8c70af972ae0cd8"], ["updated_at", "2015-08-26 05:44:55.214213"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mReadit::Announcement Load (0.2ms)[0m  [1mSELECT "readit_announcements".* FROM "readit_announcements"  WHERE (NOT (id = '1' AND content_digest = 'd2841204c06c8f0c0376febe39225094')) AND (NOT (id = '2' AND content_digest = 'defa9d7af85778ec063b99be9dc63993'))  ORDER BY "readit_announcements"."id" ASC[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["content", "read announcement one initial content"], ["content_digest", "d2841204c06c8f0c0376febe39225094"], ["created_at", "2015-08-26 05:44:55.219578"], ["is_active", "t"], ["start_at", "2015-08-26 05:44:54.985759"], ["stop_at", "2015-08-29 05:44:54.985884"], ["updated_at", "2015-08-26 05:44:55.219578"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["content", "read announcement two initial content"], ["content_digest", "defa9d7af85778ec063b99be9dc63993"], ["created_at", "2015-08-26 05:44:55.221738"], ["is_active", "t"], ["start_at", "2015-08-26 05:44:54.985759"], ["stop_at", "2015-08-29 05:44:54.985884"], ["updated_at", "2015-08-26 05:44:55.221738"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["content", "AnnouncementContent6"], ["content_digest", "a1edd77347c84a03d1944f06b87e5d2a"], ["created_at", "2015-08-26 05:44:55.223618"], ["is_active", "t"], ["start_at", "2015-08-26 05:44:54.985759"], ["stop_at", "2015-08-29 05:44:54.985884"], ["updated_at", "2015-08-26 05:44:55.223618"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mReadit::Announcement Load (0.2ms)[0m  [1mSELECT "readit_announcements".* FROM "readit_announcements"  WHERE (NOT (id = '1' AND content_digest = 'd2841204c06c8f0c0376febe39225094')) AND (NOT (id = '2' AND content_digest = 'defa9d7af85778ec063b99be9dc63993'))[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["content", "read announcement one initial content"], ["content_digest", "d2841204c06c8f0c0376febe39225094"], ["created_at", "2015-08-26 05:44:55.228675"], ["is_active", "t"], ["start_at", "2015-08-26 05:44:54.985759"], ["stop_at", "2015-08-29 05:44:54.985884"], ["updated_at", "2015-08-26 05:44:55.228675"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["content", "read announcement two initial content"], ["content_digest", "defa9d7af85778ec063b99be9dc63993"], ["created_at", "2015-08-26 05:44:55.230843"], ["is_active", "t"], ["start_at", "2015-08-26 05:44:54.985759"], ["stop_at", "2015-08-29 05:44:54.985884"], ["updated_at", "2015-08-26 05:44:55.230843"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["content", "AnnouncementContent7"], ["content_digest", "4af0047a4208a42ca379d0d0923c5423"], ["created_at", "2015-08-26 05:44:55.232665"], ["is_active", "t"], ["start_at", "2015-08-26 05:44:54.985759"], ["stop_at", "2015-08-29 05:44:54.985884"], ["updated_at", "2015-08-26 05:44:55.232665"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "readit_announcements" SET "content" = ?, "content_digest" = ?, "updated_at" = ? WHERE "readit_announcements"."id" = 1  [["content", "read announcement one updated content"], ["content_digest", "c158250b5b2c13e8e8c70af972ae0cd8"], ["updated_at", "2015-08-26 05:44:55.234113"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "readit_announcements" SET "content" = ?, "content_digest" = ?, "updated_at" = ? WHERE "readit_announcements"."id" = 2[0m  [["content", "read announcement two updated content"], ["content_digest", "50defd48776962ec2fabd2affc32b190"], ["updated_at", "2015-08-26 05:44:55.235292"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mReadit::Announcement Load (0.2ms)[0m  [1mSELECT "readit_announcements".* FROM "readit_announcements"  WHERE (NOT (id = '1' AND content_digest = 'd2841204c06c8f0c0376febe39225094')) AND (NOT (id = '2' AND content_digest = 'defa9d7af85778ec063b99be9dc63993'))  ORDER BY "readit_announcements"."id" ASC[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["content", "read announcement one initial content"], ["content_digest", "d2841204c06c8f0c0376febe39225094"], ["created_at", "2015-08-26 05:44:55.239328"], ["is_active", "t"], ["start_at", "2015-08-26 05:44:54.985759"], ["stop_at", "2015-08-29 05:44:54.985884"], ["updated_at", "2015-08-26 05:44:55.239328"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["content", "read announcement two initial content"], ["content_digest", "defa9d7af85778ec063b99be9dc63993"], ["created_at", "2015-08-26 05:44:55.241767"], ["is_active", "t"], ["start_at", "2015-08-26 05:44:54.985759"], ["stop_at", "2015-08-29 05:44:54.985884"], ["updated_at", "2015-08-26 05:44:55.241767"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["content", "AnnouncementContent8"], ["content_digest", "a09c1e91e221ea1e8d5d36c5582e3149"], ["created_at", "2015-08-26 05:44:55.243713"], ["is_active", "t"], ["start_at", "2015-08-26 05:44:54.985759"], ["stop_at", "2015-08-29 05:44:54.985884"], ["updated_at", "2015-08-26 05:44:55.243713"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mReadit::Announcement Load (0.2ms)[0m  [1mSELECT "readit_announcements".* FROM "readit_announcements"  WHERE (NOT (id = '1' AND content_digest = 'd2841204c06c8f0c0376febe39225094')) AND (NOT (id = '2' AND content_digest = 'defa9d7af85778ec063b99be9dc63993'))[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["content", "AnnouncementContent9"], ["content_digest", "fcb7d00c5b5ab10ad3ce2e80089500c5"], ["created_at", "2015-08-26 05:44:55.248298"], ["is_active", "t"], ["start_at", "2015-08-23 05:44:55.246990"], ["stop_at", "2015-08-25 05:44:55.247158"], ["updated_at", "2015-08-26 05:44:55.248298"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["content", "AnnouncementContent10"], ["content_digest", "6a613903eb51b6fe6ab64ec7bca2e08e"], ["created_at", "2015-08-26 05:44:55.250760"], ["is_active", "t"], ["start_at", "2015-08-25 05:44:55.249663"], ["stop_at", "2015-08-27 05:44:55.249787"], ["updated_at", "2015-08-26 05:44:55.250760"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["content", "AnnouncementContent11"], ["content_digest", "226f9fb01fed4a3b2db44c153eeb0e36"], ["created_at", "2015-08-26 05:44:55.252939"], ["is_active", "t"], ["start_at", "2015-08-27 05:44:55.251932"], ["stop_at", "2015-08-29 05:44:55.252039"], ["updated_at", "2015-08-26 05:44:55.252939"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mReadit::Announcement Load (0.2ms)[0m  [1mSELECT "readit_announcements".* FROM "readit_announcements"  WHERE ('2015-08-26 05:44:55.254053' BETWEEN start_at AND stop_at)[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["content", "AnnouncementContent12"], ["content_digest", "e9fa1cf4a9a5ea30f9592cc4557542ed"], ["created_at", "2015-08-26 05:44:55.256869"], ["is_active", "t"], ["start_at", "2015-08-26 05:44:54.985759"], ["stop_at", "2015-08-29 05:44:54.985884"], ["updated_at", "2015-08-26 05:44:55.256869"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["content", "AnnouncementContent13"], ["content_digest", "c5a683daf6df218679621f56ee0ce27f"], ["created_at", "2015-08-26 05:44:55.259225"], ["is_active", "t"], ["start_at", "2015-08-26 05:44:54.985759"], ["stop_at", "2015-08-31 05:44:55.258271"], ["updated_at", "2015-08-26 05:44:55.259225"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["content", "AnnouncementContent14"], ["content_digest", "8993c646b2bfca3956d4a3023c781a12"], ["created_at", "2015-08-26 05:44:55.261235"], ["is_active", "t"], ["start_at", "2015-08-26 05:44:54.985759"], ["stop_at", "2015-09-02 05:44:55.260352"], ["updated_at", "2015-08-26 05:44:55.261235"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSELECT MAX("readit_announcements"."stop_at") AS max_id FROM "readit_announcements"  WHERE "readit_announcements"."id" IN (2, 3, 1)[0m
+  [1m[35mReadit::Announcement Load (0.2ms)[0m  SELECT  "readit_announcements".* FROM "readit_announcements"  WHERE "readit_announcements"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36m (0.7ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["content", "AnnouncementContent1"], ["content_digest", "c189b74a655de160437fd8270074f844"], ["created_at", "2015-08-26 05:47:38.397314"], ["is_active", "t"], ["start_at", "2015-08-26 05:47:38.248826"], ["stop_at", "2015-08-29 05:47:38.248936"], ["updated_at", "2015-08-26 05:47:38.397314"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["content", "AnnouncementContent2"], ["content_digest", "df8a2bbe9d248f87557b1547541b11a9"], ["created_at", "2015-08-26 05:47:38.404112"], ["is_active", "t"], ["start_at", "2015-08-26 05:47:38.248826"], ["stop_at", "2015-08-31 05:47:38.402826"], ["updated_at", "2015-08-26 05:47:38.404112"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["content", "AnnouncementContent3"], ["content_digest", "7ca2ed445e1897893246298483871600"], ["created_at", "2015-08-26 05:47:38.406393"], ["is_active", "t"], ["start_at", "2015-08-26 05:47:38.248826"], ["stop_at", "2015-09-02 05:47:38.405433"], ["updated_at", "2015-08-26 05:47:38.406393"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSELECT MAX("readit_announcements"."stop_at") AS max_id FROM "readit_announcements"  WHERE "readit_announcements"."id" IN (2, 3, 1)[0m
+  [1m[35mReadit::Announcement Load (0.2ms)[0m  SELECT  "readit_announcements".* FROM "readit_announcements"  WHERE "readit_announcements"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["content", "AnnouncementContent4"], ["content_digest", "01ef2b432ade3af3b4e1980a7abcdef4"], ["created_at", "2015-08-26 05:47:38.419266"], ["is_active", "t"], ["start_at", "2015-08-26 05:47:38.248826"], ["stop_at", "2015-08-29 05:47:38.248936"], ["updated_at", "2015-08-26 05:47:38.419266"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["content", "AnnouncementContent5"], ["content_digest", "4a397ce8fb85b6bb8f55b01346f03516"], ["created_at", "2015-08-26 05:47:38.421523"], ["is_active", "f"], ["start_at", "2015-08-26 05:47:38.248826"], ["stop_at", "2015-08-29 05:47:38.248936"], ["updated_at", "2015-08-26 05:47:38.421523"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mReadit::Announcement Load (0.2ms)[0m  [1mSELECT "readit_announcements".* FROM "readit_announcements"  WHERE "readit_announcements"."is_active" = 't'[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["content", "AnnouncementContent6"], ["content_digest", "a1edd77347c84a03d1944f06b87e5d2a"], ["created_at", "2015-08-26 05:47:38.426198"], ["is_active", "t"], ["start_at", "2015-08-23 05:47:38.424877"], ["stop_at", "2015-08-25 05:47:38.425052"], ["updated_at", "2015-08-26 05:47:38.426198"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["content", "AnnouncementContent7"], ["content_digest", "4af0047a4208a42ca379d0d0923c5423"], ["created_at", "2015-08-26 05:47:38.428642"], ["is_active", "t"], ["start_at", "2015-08-25 05:47:38.427531"], ["stop_at", "2015-08-27 05:47:38.427653"], ["updated_at", "2015-08-26 05:47:38.428642"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["content", "AnnouncementContent8"], ["content_digest", "a09c1e91e221ea1e8d5d36c5582e3149"], ["created_at", "2015-08-26 05:47:38.430889"], ["is_active", "t"], ["start_at", "2015-08-27 05:47:38.429818"], ["stop_at", "2015-08-29 05:47:38.429927"], ["updated_at", "2015-08-26 05:47:38.430889"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mReadit::Announcement Load (0.2ms)[0m  [1mSELECT "readit_announcements".* FROM "readit_announcements"  WHERE ('2015-08-26 05:47:38.432095' BETWEEN start_at AND stop_at)[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "readit_announcements" ("content", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["content", "some content"], ["created_at", "2015-08-26 05:47:38.445920"], ["is_active", "t"], ["start_at", "2015-08-26 05:47:38.248826"], ["stop_at", "2015-08-29 05:47:38.248936"], ["updated_at", "2015-08-26 05:47:38.445920"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["content", "some content"], ["content_digest", "9893532233caff98cd083a116b013c0b"], ["created_at", "2015-08-26 05:47:38.449875"], ["is_active", "t"], ["start_at", "2015-08-26 05:47:38.248826"], ["stop_at", "2015-08-29 05:47:38.248936"], ["updated_at", "2015-08-26 05:47:38.449875"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["content", "read announcement one initial content"], ["content_digest", "d2841204c06c8f0c0376febe39225094"], ["created_at", "2015-08-26 05:47:38.512113"], ["is_active", "t"], ["start_at", "2015-08-26 05:47:38.248826"], ["stop_at", "2015-08-29 05:47:38.248936"], ["updated_at", "2015-08-26 05:47:38.512113"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["content", "read announcement two initial content"], ["content_digest", "defa9d7af85778ec063b99be9dc63993"], ["created_at", "2015-08-26 05:47:38.514624"], ["is_active", "t"], ["start_at", "2015-08-26 05:47:38.248826"], ["stop_at", "2015-08-29 05:47:38.248936"], ["updated_at", "2015-08-26 05:47:38.514624"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["content", "AnnouncementContent14"], ["content_digest", "8993c646b2bfca3956d4a3023c781a12"], ["created_at", "2015-08-26 05:47:38.516537"], ["is_active", "t"], ["start_at", "2015-08-26 05:47:38.248826"], ["stop_at", "2015-08-29 05:47:38.248936"], ["updated_at", "2015-08-26 05:47:38.516537"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE "readit_announcements" SET "content" = ?, "content_digest" = ?, "updated_at" = ? WHERE "readit_announcements"."id" = 1  [["content", "read announcement one updated content"], ["content_digest", "c158250b5b2c13e8e8c70af972ae0cd8"], ["updated_at", "2015-08-26 05:47:38.518091"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "readit_announcements" SET "content" = ?, "content_digest" = ?, "updated_at" = ? WHERE "readit_announcements"."id" = 2[0m  [["content", "read announcement two updated content"], ["content_digest", "50defd48776962ec2fabd2affc32b190"], ["updated_at", "2015-08-26 05:47:38.521095"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mReadit::Announcement Load (0.2ms)[0m  [1mSELECT "readit_announcements".* FROM "readit_announcements"  WHERE (NOT (id = '1' AND content_digest = 'd2841204c06c8f0c0376febe39225094')) AND (NOT (id = '2' AND content_digest = 'defa9d7af85778ec063b99be9dc63993'))  ORDER BY "readit_announcements"."id" ASC[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["content", "read announcement one initial content"], ["content_digest", "d2841204c06c8f0c0376febe39225094"], ["created_at", "2015-08-26 05:47:38.525728"], ["is_active", "t"], ["start_at", "2015-08-26 05:47:38.248826"], ["stop_at", "2015-08-29 05:47:38.248936"], ["updated_at", "2015-08-26 05:47:38.525728"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["content", "read announcement two initial content"], ["content_digest", "defa9d7af85778ec063b99be9dc63993"], ["created_at", "2015-08-26 05:47:38.528048"], ["is_active", "t"], ["start_at", "2015-08-26 05:47:38.248826"], ["stop_at", "2015-08-29 05:47:38.248936"], ["updated_at", "2015-08-26 05:47:38.528048"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["content", "AnnouncementContent15"], ["content_digest", "bd827d909122183730be2057f79cf848"], ["created_at", "2015-08-26 05:47:38.530051"], ["is_active", "t"], ["start_at", "2015-08-26 05:47:38.248826"], ["stop_at", "2015-08-29 05:47:38.248936"], ["updated_at", "2015-08-26 05:47:38.530051"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mReadit::Announcement Load (0.2ms)[0m  [1mSELECT "readit_announcements".* FROM "readit_announcements"  WHERE (NOT (id = '1' AND content_digest = 'd2841204c06c8f0c0376febe39225094')) AND (NOT (id = '2' AND content_digest = 'defa9d7af85778ec063b99be9dc63993'))[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["content", "read announcement one initial content"], ["content_digest", "d2841204c06c8f0c0376febe39225094"], ["created_at", "2015-08-26 05:47:38.534366"], ["is_active", "t"], ["start_at", "2015-08-26 05:47:38.248826"], ["stop_at", "2015-08-29 05:47:38.248936"], ["updated_at", "2015-08-26 05:47:38.534366"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["content", "read announcement two initial content"], ["content_digest", "defa9d7af85778ec063b99be9dc63993"], ["created_at", "2015-08-26 05:47:38.536511"], ["is_active", "t"], ["start_at", "2015-08-26 05:47:38.248826"], ["stop_at", "2015-08-29 05:47:38.248936"], ["updated_at", "2015-08-26 05:47:38.536511"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["content", "AnnouncementContent16"], ["content_digest", "a079e6799481804f67d5b7fa9003ad5b"], ["created_at", "2015-08-26 05:47:38.538402"], ["is_active", "t"], ["start_at", "2015-08-26 05:47:38.248826"], ["stop_at", "2015-08-29 05:47:38.248936"], ["updated_at", "2015-08-26 05:47:38.538402"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mReadit::Announcement Load (0.2ms)[0m  [1mSELECT "readit_announcements".* FROM "readit_announcements"  WHERE (NOT (id = '1' AND content_digest = 'd2841204c06c8f0c0376febe39225094')) AND (NOT (id = '2' AND content_digest = 'defa9d7af85778ec063b99be9dc63993'))[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["content", "read announcement one initial content"], ["content_digest", "d2841204c06c8f0c0376febe39225094"], ["created_at", "2015-08-26 05:47:38.543194"], ["is_active", "t"], ["start_at", "2015-08-26 05:47:38.248826"], ["stop_at", "2015-08-29 05:47:38.248936"], ["updated_at", "2015-08-26 05:47:38.543194"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["content", "read announcement two initial content"], ["content_digest", "defa9d7af85778ec063b99be9dc63993"], ["created_at", "2015-08-26 05:47:38.545328"], ["is_active", "t"], ["start_at", "2015-08-26 05:47:38.248826"], ["stop_at", "2015-08-29 05:47:38.248936"], ["updated_at", "2015-08-26 05:47:38.545328"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["content", "AnnouncementContent17"], ["content_digest", "6db22f914f1f5ce73bfcc9df56ebe200"], ["created_at", "2015-08-26 05:47:38.547250"], ["is_active", "t"], ["start_at", "2015-08-26 05:47:38.248826"], ["stop_at", "2015-08-29 05:47:38.248936"], ["updated_at", "2015-08-26 05:47:38.547250"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "readit_announcements" SET "content" = ?, "content_digest" = ?, "updated_at" = ? WHERE "readit_announcements"."id" = 1  [["content", "read announcement one updated content"], ["content_digest", "c158250b5b2c13e8e8c70af972ae0cd8"], ["updated_at", "2015-08-26 05:47:38.548770"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mReadit::Announcement Load (0.2ms)[0m  SELECT "readit_announcements".* FROM "readit_announcements"  WHERE (NOT (id = '1' AND content_digest = 'd2841204c06c8f0c0376febe39225094')) AND (NOT (id = '2' AND content_digest = 'defa9d7af85778ec063b99be9dc63993'))  ORDER BY "readit_announcements"."id" ASC
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[36m (0.5ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["content", "AnnouncementContent4"], ["content_digest", "01ef2b432ade3af3b4e1980a7abcdef4"], ["created_at", "2015-08-26 05:48:08.670460"], ["is_active", "t"], ["start_at", "2015-08-26 05:48:08.519093"], ["stop_at", "2015-08-29 05:48:08.519203"], ["updated_at", "2015-08-26 05:48:08.670460"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["content", "AnnouncementContent5"], ["content_digest", "4a397ce8fb85b6bb8f55b01346f03516"], ["created_at", "2015-08-26 05:48:08.675771"], ["is_active", "f"], ["start_at", "2015-08-26 05:48:08.519093"], ["stop_at", "2015-08-29 05:48:08.519203"], ["updated_at", "2015-08-26 05:48:08.675771"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mReadit::Announcement Load (0.2ms)[0m  SELECT "readit_announcements".* FROM "readit_announcements"  WHERE "readit_announcements"."is_active" = 't'
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["content", "read announcement one initial content"], ["content_digest", "d2841204c06c8f0c0376febe39225094"], ["created_at", "2015-08-26 05:48:08.684939"], ["is_active", "t"], ["start_at", "2015-08-26 05:48:08.519093"], ["stop_at", "2015-08-29 05:48:08.519203"], ["updated_at", "2015-08-26 05:48:08.684939"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["content", "read announcement two initial content"], ["content_digest", "defa9d7af85778ec063b99be9dc63993"], ["created_at", "2015-08-26 05:48:08.687302"], ["is_active", "t"], ["start_at", "2015-08-26 05:48:08.519093"], ["stop_at", "2015-08-29 05:48:08.519203"], ["updated_at", "2015-08-26 05:48:08.687302"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["content", "AnnouncementContent6"], ["content_digest", "a1edd77347c84a03d1944f06b87e5d2a"], ["created_at", "2015-08-26 05:48:08.689195"], ["is_active", "t"], ["start_at", "2015-08-26 05:48:08.519093"], ["stop_at", "2015-08-29 05:48:08.519203"], ["updated_at", "2015-08-26 05:48:08.689195"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "readit_announcements" SET "content" = ?, "content_digest" = ?, "updated_at" = ? WHERE "readit_announcements"."id" = 1[0m  [["content", "read announcement one updated content"], ["content_digest", "c158250b5b2c13e8e8c70af972ae0cd8"], ["updated_at", "2015-08-26 05:48:08.690772"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "readit_announcements" SET "content" = ?, "content_digest" = ?, "updated_at" = ? WHERE "readit_announcements"."id" = 2  [["content", "read announcement two updated content"], ["content_digest", "50defd48776962ec2fabd2affc32b190"], ["updated_at", "2015-08-26 05:48:08.692960"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mReadit::Announcement Load (0.2ms)[0m  SELECT "readit_announcements".* FROM "readit_announcements"  WHERE (NOT (id = '1' AND content_digest = 'd2841204c06c8f0c0376febe39225094')) AND (NOT (id = '2' AND content_digest = 'defa9d7af85778ec063b99be9dc63993'))  ORDER BY "readit_announcements"."id" ASC
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["content", "read announcement one initial content"], ["content_digest", "d2841204c06c8f0c0376febe39225094"], ["created_at", "2015-08-26 05:48:08.697347"], ["is_active", "t"], ["start_at", "2015-08-26 05:48:08.519093"], ["stop_at", "2015-08-29 05:48:08.519203"], ["updated_at", "2015-08-26 05:48:08.697347"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["content", "read announcement two initial content"], ["content_digest", "defa9d7af85778ec063b99be9dc63993"], ["created_at", "2015-08-26 05:48:08.699605"], ["is_active", "t"], ["start_at", "2015-08-26 05:48:08.519093"], ["stop_at", "2015-08-29 05:48:08.519203"], ["updated_at", "2015-08-26 05:48:08.699605"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["content", "AnnouncementContent7"], ["content_digest", "4af0047a4208a42ca379d0d0923c5423"], ["created_at", "2015-08-26 05:48:08.701503"], ["is_active", "t"], ["start_at", "2015-08-26 05:48:08.519093"], ["stop_at", "2015-08-29 05:48:08.519203"], ["updated_at", "2015-08-26 05:48:08.701503"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "readit_announcements" SET "content" = ?, "content_digest" = ?, "updated_at" = ? WHERE "readit_announcements"."id" = 1[0m  [["content", "read announcement one updated content"], ["content_digest", "c158250b5b2c13e8e8c70af972ae0cd8"], ["updated_at", "2015-08-26 05:48:08.704452"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mReadit::Announcement Load (0.4ms)[0m  [1mSELECT "readit_announcements".* FROM "readit_announcements"  WHERE (NOT (id = '1' AND content_digest = 'd2841204c06c8f0c0376febe39225094')) AND (NOT (id = '2' AND content_digest = 'defa9d7af85778ec063b99be9dc63993'))  ORDER BY "readit_announcements"."id" ASC[0m
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["content", "read announcement one initial content"], ["content_digest", "d2841204c06c8f0c0376febe39225094"], ["created_at", "2015-08-26 05:48:08.713406"], ["is_active", "t"], ["start_at", "2015-08-26 05:48:08.519093"], ["stop_at", "2015-08-29 05:48:08.519203"], ["updated_at", "2015-08-26 05:48:08.713406"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["content", "read announcement two initial content"], ["content_digest", "defa9d7af85778ec063b99be9dc63993"], ["created_at", "2015-08-26 05:48:08.716181"], ["is_active", "t"], ["start_at", "2015-08-26 05:48:08.519093"], ["stop_at", "2015-08-29 05:48:08.519203"], ["updated_at", "2015-08-26 05:48:08.716181"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["content", "AnnouncementContent8"], ["content_digest", "a09c1e91e221ea1e8d5d36c5582e3149"], ["created_at", "2015-08-26 05:48:08.718212"], ["is_active", "t"], ["start_at", "2015-08-26 05:48:08.519093"], ["stop_at", "2015-08-29 05:48:08.519203"], ["updated_at", "2015-08-26 05:48:08.718212"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mReadit::Announcement Load (0.2ms)[0m  [1mSELECT "readit_announcements".* FROM "readit_announcements"  WHERE (NOT (id = '1' AND content_digest = 'd2841204c06c8f0c0376febe39225094')) AND (NOT (id = '2' AND content_digest = 'defa9d7af85778ec063b99be9dc63993'))[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["content", "read announcement one initial content"], ["content_digest", "d2841204c06c8f0c0376febe39225094"], ["created_at", "2015-08-26 05:48:08.723646"], ["is_active", "t"], ["start_at", "2015-08-26 05:48:08.519093"], ["stop_at", "2015-08-29 05:48:08.519203"], ["updated_at", "2015-08-26 05:48:08.723646"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["content", "read announcement two initial content"], ["content_digest", "defa9d7af85778ec063b99be9dc63993"], ["created_at", "2015-08-26 05:48:08.726048"], ["is_active", "t"], ["start_at", "2015-08-26 05:48:08.519093"], ["stop_at", "2015-08-29 05:48:08.519203"], ["updated_at", "2015-08-26 05:48:08.726048"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["content", "AnnouncementContent9"], ["content_digest", "fcb7d00c5b5ab10ad3ce2e80089500c5"], ["created_at", "2015-08-26 05:48:08.728061"], ["is_active", "t"], ["start_at", "2015-08-26 05:48:08.519093"], ["stop_at", "2015-08-29 05:48:08.519203"], ["updated_at", "2015-08-26 05:48:08.728061"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mReadit::Announcement Load (0.2ms)[0m  [1mSELECT "readit_announcements".* FROM "readit_announcements"  WHERE (NOT (id = '1' AND content_digest = 'd2841204c06c8f0c0376febe39225094')) AND (NOT (id = '2' AND content_digest = 'defa9d7af85778ec063b99be9dc63993'))[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["content", "AnnouncementContent10"], ["content_digest", "6a613903eb51b6fe6ab64ec7bca2e08e"], ["created_at", "2015-08-26 05:48:08.732798"], ["is_active", "t"], ["start_at", "2015-08-23 05:48:08.731438"], ["stop_at", "2015-08-25 05:48:08.731672"], ["updated_at", "2015-08-26 05:48:08.732798"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["content", "AnnouncementContent11"], ["content_digest", "226f9fb01fed4a3b2db44c153eeb0e36"], ["created_at", "2015-08-26 05:48:08.735585"], ["is_active", "t"], ["start_at", "2015-08-25 05:48:08.734423"], ["stop_at", "2015-08-27 05:48:08.734554"], ["updated_at", "2015-08-26 05:48:08.735585"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["content", "AnnouncementContent12"], ["content_digest", "e9fa1cf4a9a5ea30f9592cc4557542ed"], ["created_at", "2015-08-26 05:48:08.738071"], ["is_active", "t"], ["start_at", "2015-08-27 05:48:08.736892"], ["stop_at", "2015-08-29 05:48:08.737016"], ["updated_at", "2015-08-26 05:48:08.738071"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mReadit::Announcement Load (0.2ms)[0m  [1mSELECT "readit_announcements".* FROM "readit_announcements"  WHERE ('2015-08-26 05:48:08.739310' BETWEEN start_at AND stop_at)[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["content", "some content"], ["content_digest", "9893532233caff98cd083a116b013c0b"], ["created_at", "2015-08-26 05:48:08.742729"], ["is_active", "t"], ["start_at", "2015-08-26 05:48:08.519093"], ["stop_at", "2015-08-29 05:48:08.519203"], ["updated_at", "2015-08-26 05:48:08.742729"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "readit_announcements" ("content", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["content", "some content"], ["created_at", "2015-08-26 05:48:08.754189"], ["is_active", "t"], ["start_at", "2015-08-26 05:48:08.519093"], ["stop_at", "2015-08-29 05:48:08.519203"], ["updated_at", "2015-08-26 05:48:08.754189"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["content", "AnnouncementContent15"], ["content_digest", "bd827d909122183730be2057f79cf848"], ["created_at", "2015-08-26 05:48:08.763795"], ["is_active", "t"], ["start_at", "2015-08-26 05:48:08.519093"], ["stop_at", "2015-08-29 05:48:08.519203"], ["updated_at", "2015-08-26 05:48:08.763795"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["content", "AnnouncementContent16"], ["content_digest", "a079e6799481804f67d5b7fa9003ad5b"], ["created_at", "2015-08-26 05:48:08.766396"], ["is_active", "t"], ["start_at", "2015-08-26 05:48:08.519093"], ["stop_at", "2015-08-31 05:48:08.765353"], ["updated_at", "2015-08-26 05:48:08.766396"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["content", "AnnouncementContent17"], ["content_digest", "6db22f914f1f5ce73bfcc9df56ebe200"], ["created_at", "2015-08-26 05:48:08.768635"], ["is_active", "t"], ["start_at", "2015-08-26 05:48:08.519093"], ["stop_at", "2015-09-02 05:48:08.767676"], ["updated_at", "2015-08-26 05:48:08.768635"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSELECT MAX("readit_announcements"."stop_at") AS max_id FROM "readit_announcements"  WHERE "readit_announcements"."id" IN (2, 3, 1)[0m
+  [1m[35mReadit::Announcement Load (0.2ms)[0m  SELECT  "readit_announcements".* FROM "readit_announcements"  WHERE "readit_announcements"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[36m (0.5ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["content", "read announcement one initial content"], ["content_digest", "d2841204c06c8f0c0376febe39225094"], ["created_at", "2015-08-26 05:48:22.919674"], ["is_active", "t"], ["start_at", "2015-08-26 05:48:22.789379"], ["stop_at", "2015-08-29 05:48:22.789482"], ["updated_at", "2015-08-26 05:48:22.919674"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["content", "read announcement two initial content"], ["content_digest", "defa9d7af85778ec063b99be9dc63993"], ["created_at", "2015-08-26 05:48:22.925119"], ["is_active", "t"], ["start_at", "2015-08-26 05:48:22.789379"], ["stop_at", "2015-08-29 05:48:22.789482"], ["updated_at", "2015-08-26 05:48:22.925119"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["content", "AnnouncementContent1"], ["content_digest", "c189b74a655de160437fd8270074f844"], ["created_at", "2015-08-26 05:48:22.927890"], ["is_active", "t"], ["start_at", "2015-08-26 05:48:22.789379"], ["stop_at", "2015-08-29 05:48:22.789482"], ["updated_at", "2015-08-26 05:48:22.927890"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mReadit::Announcement Load (0.2ms)[0m  [1mSELECT "readit_announcements".* FROM "readit_announcements"  WHERE (NOT (id = '1' AND content_digest = 'd2841204c06c8f0c0376febe39225094')) AND (NOT (id = '2' AND content_digest = 'defa9d7af85778ec063b99be9dc63993'))[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["content", "read announcement one initial content"], ["content_digest", "d2841204c06c8f0c0376febe39225094"], ["created_at", "2015-08-26 05:48:22.935169"], ["is_active", "t"], ["start_at", "2015-08-26 05:48:22.789379"], ["stop_at", "2015-08-29 05:48:22.789482"], ["updated_at", "2015-08-26 05:48:22.935169"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["content", "read announcement two initial content"], ["content_digest", "defa9d7af85778ec063b99be9dc63993"], ["created_at", "2015-08-26 05:48:22.937310"], ["is_active", "t"], ["start_at", "2015-08-26 05:48:22.789379"], ["stop_at", "2015-08-29 05:48:22.789482"], ["updated_at", "2015-08-26 05:48:22.937310"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["content", "AnnouncementContent2"], ["content_digest", "df8a2bbe9d248f87557b1547541b11a9"], ["created_at", "2015-08-26 05:48:22.939244"], ["is_active", "t"], ["start_at", "2015-08-26 05:48:22.789379"], ["stop_at", "2015-08-29 05:48:22.789482"], ["updated_at", "2015-08-26 05:48:22.939244"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "readit_announcements" SET "content" = ?, "content_digest" = ?, "updated_at" = ? WHERE "readit_announcements"."id" = 1  [["content", "read announcement one updated content"], ["content_digest", "c158250b5b2c13e8e8c70af972ae0cd8"], ["updated_at", "2015-08-26 05:48:22.940757"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mReadit::Announcement Load (0.2ms)[0m  SELECT "readit_announcements".* FROM "readit_announcements"  WHERE (NOT (id = '1' AND content_digest = 'd2841204c06c8f0c0376febe39225094')) AND (NOT (id = '2' AND content_digest = 'defa9d7af85778ec063b99be9dc63993'))  ORDER BY "readit_announcements"."id" ASC
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["content", "read announcement one initial content"], ["content_digest", "d2841204c06c8f0c0376febe39225094"], ["created_at", "2015-08-26 05:48:22.946010"], ["is_active", "t"], ["start_at", "2015-08-26 05:48:22.789379"], ["stop_at", "2015-08-29 05:48:22.789482"], ["updated_at", "2015-08-26 05:48:22.946010"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["content", "read announcement two initial content"], ["content_digest", "defa9d7af85778ec063b99be9dc63993"], ["created_at", "2015-08-26 05:48:22.948164"], ["is_active", "t"], ["start_at", "2015-08-26 05:48:22.789379"], ["stop_at", "2015-08-29 05:48:22.789482"], ["updated_at", "2015-08-26 05:48:22.948164"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["content", "AnnouncementContent3"], ["content_digest", "7ca2ed445e1897893246298483871600"], ["created_at", "2015-08-26 05:48:22.950104"], ["is_active", "t"], ["start_at", "2015-08-26 05:48:22.789379"], ["stop_at", "2015-08-29 05:48:22.789482"], ["updated_at", "2015-08-26 05:48:22.950104"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "readit_announcements" SET "content" = ?, "content_digest" = ?, "updated_at" = ? WHERE "readit_announcements"."id" = 1[0m  [["content", "read announcement one updated content"], ["content_digest", "c158250b5b2c13e8e8c70af972ae0cd8"], ["updated_at", "2015-08-26 05:48:22.951945"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "readit_announcements" SET "content" = ?, "content_digest" = ?, "updated_at" = ? WHERE "readit_announcements"."id" = 2  [["content", "read announcement two updated content"], ["content_digest", "50defd48776962ec2fabd2affc32b190"], ["updated_at", "2015-08-26 05:48:22.953229"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mReadit::Announcement Load (0.2ms)[0m  SELECT "readit_announcements".* FROM "readit_announcements"  WHERE (NOT (id = '1' AND content_digest = 'd2841204c06c8f0c0376febe39225094')) AND (NOT (id = '2' AND content_digest = 'defa9d7af85778ec063b99be9dc63993'))  ORDER BY "readit_announcements"."id" ASC
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["content", "read announcement one initial content"], ["content_digest", "d2841204c06c8f0c0376febe39225094"], ["created_at", "2015-08-26 05:48:22.957392"], ["is_active", "t"], ["start_at", "2015-08-26 05:48:22.789379"], ["stop_at", "2015-08-29 05:48:22.789482"], ["updated_at", "2015-08-26 05:48:22.957392"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["content", "read announcement two initial content"], ["content_digest", "defa9d7af85778ec063b99be9dc63993"], ["created_at", "2015-08-26 05:48:22.959607"], ["is_active", "t"], ["start_at", "2015-08-26 05:48:22.789379"], ["stop_at", "2015-08-29 05:48:22.789482"], ["updated_at", "2015-08-26 05:48:22.959607"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["content", "AnnouncementContent4"], ["content_digest", "01ef2b432ade3af3b4e1980a7abcdef4"], ["created_at", "2015-08-26 05:48:22.961460"], ["is_active", "t"], ["start_at", "2015-08-26 05:48:22.789379"], ["stop_at", "2015-08-29 05:48:22.789482"], ["updated_at", "2015-08-26 05:48:22.961460"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mReadit::Announcement Load (0.2ms)[0m  SELECT "readit_announcements".* FROM "readit_announcements"  WHERE (NOT (id = '1' AND content_digest = 'd2841204c06c8f0c0376febe39225094')) AND (NOT (id = '2' AND content_digest = 'defa9d7af85778ec063b99be9dc63993'))
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "readit_announcements" ("content", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["content", "some content"], ["created_at", "2015-08-26 05:48:22.973652"], ["is_active", "t"], ["start_at", "2015-08-26 05:48:22.789379"], ["stop_at", "2015-08-29 05:48:22.789482"], ["updated_at", "2015-08-26 05:48:22.973652"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["content", "some content"], ["content_digest", "9893532233caff98cd083a116b013c0b"], ["created_at", "2015-08-26 05:48:22.977455"], ["is_active", "t"], ["start_at", "2015-08-26 05:48:22.789379"], ["stop_at", "2015-08-29 05:48:22.789482"], ["updated_at", "2015-08-26 05:48:22.977455"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["content", "AnnouncementContent5"], ["content_digest", "4a397ce8fb85b6bb8f55b01346f03516"], ["created_at", "2015-08-26 05:48:22.981464"], ["is_active", "t"], ["start_at", "2015-08-23 05:48:22.980158"], ["stop_at", "2015-08-25 05:48:22.980370"], ["updated_at", "2015-08-26 05:48:22.981464"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["content", "AnnouncementContent6"], ["content_digest", "a1edd77347c84a03d1944f06b87e5d2a"], ["created_at", "2015-08-26 05:48:22.983916"], ["is_active", "t"], ["start_at", "2015-08-25 05:48:22.982855"], ["stop_at", "2015-08-27 05:48:22.982977"], ["updated_at", "2015-08-26 05:48:22.983916"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["content", "AnnouncementContent7"], ["content_digest", "4af0047a4208a42ca379d0d0923c5423"], ["created_at", "2015-08-26 05:48:22.986653"], ["is_active", "t"], ["start_at", "2015-08-27 05:48:22.985505"], ["stop_at", "2015-08-29 05:48:22.985626"], ["updated_at", "2015-08-26 05:48:22.986653"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mReadit::Announcement Load (0.2ms)[0m  SELECT "readit_announcements".* FROM "readit_announcements"  WHERE ('2015-08-26 05:48:22.987839' BETWEEN start_at AND stop_at)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["content", "AnnouncementContent8"], ["content_digest", "a09c1e91e221ea1e8d5d36c5582e3149"], ["created_at", "2015-08-26 05:48:22.990754"], ["is_active", "t"], ["start_at", "2015-08-26 05:48:22.789379"], ["stop_at", "2015-08-29 05:48:22.789482"], ["updated_at", "2015-08-26 05:48:22.990754"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["content", "AnnouncementContent9"], ["content_digest", "fcb7d00c5b5ab10ad3ce2e80089500c5"], ["created_at", "2015-08-26 05:48:22.993115"], ["is_active", "t"], ["start_at", "2015-08-26 05:48:22.789379"], ["stop_at", "2015-08-31 05:48:22.992163"], ["updated_at", "2015-08-26 05:48:22.993115"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["content", "AnnouncementContent10"], ["content_digest", "6a613903eb51b6fe6ab64ec7bca2e08e"], ["created_at", "2015-08-26 05:48:22.995221"], ["is_active", "t"], ["start_at", "2015-08-26 05:48:22.789379"], ["stop_at", "2015-09-02 05:48:22.994334"], ["updated_at", "2015-08-26 05:48:22.995221"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SELECT MAX("readit_announcements"."stop_at") AS max_id FROM "readit_announcements"  WHERE "readit_announcements"."id" IN (2, 3, 1)
+  [1m[36mReadit::Announcement Load (0.2ms)[0m  [1mSELECT  "readit_announcements".* FROM "readit_announcements"  WHERE "readit_announcements"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["content", "AnnouncementContent16"], ["content_digest", "a079e6799481804f67d5b7fa9003ad5b"], ["created_at", "2015-08-26 05:48:23.033648"], ["is_active", "t"], ["start_at", "2015-08-26 05:48:22.789379"], ["stop_at", "2015-08-29 05:48:22.789482"], ["updated_at", "2015-08-26 05:48:23.033648"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["content", "AnnouncementContent17"], ["content_digest", "6db22f914f1f5ce73bfcc9df56ebe200"], ["created_at", "2015-08-26 05:48:23.035907"], ["is_active", "f"], ["start_at", "2015-08-26 05:48:22.789379"], ["stop_at", "2015-08-29 05:48:22.789482"], ["updated_at", "2015-08-26 05:48:23.035907"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mReadit::Announcement Load (0.2ms)[0m  SELECT "readit_announcements".* FROM "readit_announcements"  WHERE "readit_announcements"."is_active" = 't'
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[36m (0.5ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["content", "AnnouncementContent3"], ["content_digest", "7ca2ed445e1897893246298483871600"], ["created_at", "2015-08-26 05:49:32.758973"], ["is_active", "t"], ["start_at", "2015-08-23 05:49:32.757651"], ["stop_at", "2015-08-25 05:49:32.757797"], ["updated_at", "2015-08-26 05:49:32.758973"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["content", "AnnouncementContent4"], ["content_digest", "01ef2b432ade3af3b4e1980a7abcdef4"], ["created_at", "2015-08-26 05:49:32.764249"], ["is_active", "t"], ["start_at", "2015-08-25 05:49:32.763023"], ["stop_at", "2015-08-27 05:49:32.763173"], ["updated_at", "2015-08-26 05:49:32.764249"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["content", "AnnouncementContent5"], ["content_digest", "4a397ce8fb85b6bb8f55b01346f03516"], ["created_at", "2015-08-26 05:49:32.766560"], ["is_active", "t"], ["start_at", "2015-08-27 05:49:32.765485"], ["stop_at", "2015-08-29 05:49:32.765593"], ["updated_at", "2015-08-26 05:49:32.766560"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mReadit::Announcement Load (0.2ms)[0m  [1mSELECT "readit_announcements".* FROM "readit_announcements"  WHERE ('2015-08-26 05:49:32.767806' BETWEEN start_at AND stop_at)[0m
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["content", "AnnouncementContent6"], ["content_digest", "a1edd77347c84a03d1944f06b87e5d2a"], ["created_at", "2015-08-26 05:49:32.777047"], ["is_active", "t"], ["start_at", "2015-08-26 05:49:32.628740"], ["stop_at", "2015-08-29 05:49:32.628846"], ["updated_at", "2015-08-26 05:49:32.777047"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["content", "AnnouncementContent7"], ["content_digest", "4af0047a4208a42ca379d0d0923c5423"], ["created_at", "2015-08-26 05:49:32.782182"], ["is_active", "f"], ["start_at", "2015-08-26 05:49:32.628740"], ["stop_at", "2015-08-29 05:49:32.628846"], ["updated_at", "2015-08-26 05:49:32.782182"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mReadit::Announcement Load (0.2ms)[0m  SELECT "readit_announcements".* FROM "readit_announcements"  WHERE "readit_announcements"."is_active" = 't'
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "readit_announcements" ("content", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["content", "some content"], ["created_at", "2015-08-26 05:49:32.799699"], ["is_active", "t"], ["start_at", "2015-08-26 05:49:32.628740"], ["stop_at", "2015-08-29 05:49:32.628846"], ["updated_at", "2015-08-26 05:49:32.799699"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["content", "some content"], ["content_digest", "9893532233caff98cd083a116b013c0b"], ["created_at", "2015-08-26 05:49:32.803555"], ["is_active", "t"], ["start_at", "2015-08-26 05:49:32.628740"], ["stop_at", "2015-08-29 05:49:32.628846"], ["updated_at", "2015-08-26 05:49:32.803555"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["content", "read announcement one initial content"], ["content_digest", "d2841204c06c8f0c0376febe39225094"], ["created_at", "2015-08-26 05:49:32.807423"], ["is_active", "t"], ["start_at", "2015-08-26 05:49:32.628740"], ["stop_at", "2015-08-29 05:49:32.628846"], ["updated_at", "2015-08-26 05:49:32.807423"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["content", "read announcement two initial content"], ["content_digest", "defa9d7af85778ec063b99be9dc63993"], ["created_at", "2015-08-26 05:49:32.809718"], ["is_active", "t"], ["start_at", "2015-08-26 05:49:32.628740"], ["stop_at", "2015-08-29 05:49:32.628846"], ["updated_at", "2015-08-26 05:49:32.809718"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["content", "AnnouncementContent8"], ["content_digest", "a09c1e91e221ea1e8d5d36c5582e3149"], ["created_at", "2015-08-26 05:49:32.811837"], ["is_active", "t"], ["start_at", "2015-08-26 05:49:32.628740"], ["stop_at", "2015-08-29 05:49:32.628846"], ["updated_at", "2015-08-26 05:49:32.811837"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mReadit::Announcement Load (0.2ms)[0m  SELECT "readit_announcements".* FROM "readit_announcements"  WHERE (NOT (id = '1' AND content_digest = 'd2841204c06c8f0c0376febe39225094')) AND (NOT (id = '2' AND content_digest = 'defa9d7af85778ec063b99be9dc63993'))
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["content", "read announcement one initial content"], ["content_digest", "d2841204c06c8f0c0376febe39225094"], ["created_at", "2015-08-26 05:49:32.815988"], ["is_active", "t"], ["start_at", "2015-08-26 05:49:32.628740"], ["stop_at", "2015-08-29 05:49:32.628846"], ["updated_at", "2015-08-26 05:49:32.815988"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["content", "read announcement two initial content"], ["content_digest", "defa9d7af85778ec063b99be9dc63993"], ["created_at", "2015-08-26 05:49:32.818110"], ["is_active", "t"], ["start_at", "2015-08-26 05:49:32.628740"], ["stop_at", "2015-08-29 05:49:32.628846"], ["updated_at", "2015-08-26 05:49:32.818110"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["content", "AnnouncementContent9"], ["content_digest", "fcb7d00c5b5ab10ad3ce2e80089500c5"], ["created_at", "2015-08-26 05:49:32.819965"], ["is_active", "t"], ["start_at", "2015-08-26 05:49:32.628740"], ["stop_at", "2015-08-29 05:49:32.628846"], ["updated_at", "2015-08-26 05:49:32.819965"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "readit_announcements" SET "content" = ?, "content_digest" = ?, "updated_at" = ? WHERE "readit_announcements"."id" = 1[0m  [["content", "read announcement one updated content"], ["content_digest", "c158250b5b2c13e8e8c70af972ae0cd8"], ["updated_at", "2015-08-26 05:49:32.821510"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "readit_announcements" SET "content" = ?, "content_digest" = ?, "updated_at" = ? WHERE "readit_announcements"."id" = 2  [["content", "read announcement two updated content"], ["content_digest", "50defd48776962ec2fabd2affc32b190"], ["updated_at", "2015-08-26 05:49:32.823706"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mReadit::Announcement Load (0.2ms)[0m  SELECT "readit_announcements".* FROM "readit_announcements"  WHERE (NOT (id = '1' AND content_digest = 'd2841204c06c8f0c0376febe39225094')) AND (NOT (id = '2' AND content_digest = 'defa9d7af85778ec063b99be9dc63993'))  ORDER BY "readit_announcements"."id" ASC
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["content", "read announcement one initial content"], ["content_digest", "d2841204c06c8f0c0376febe39225094"], ["created_at", "2015-08-26 05:49:32.828014"], ["is_active", "t"], ["start_at", "2015-08-26 05:49:32.628740"], ["stop_at", "2015-08-29 05:49:32.628846"], ["updated_at", "2015-08-26 05:49:32.828014"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["content", "read announcement two initial content"], ["content_digest", "defa9d7af85778ec063b99be9dc63993"], ["created_at", "2015-08-26 05:49:32.830236"], ["is_active", "t"], ["start_at", "2015-08-26 05:49:32.628740"], ["stop_at", "2015-08-29 05:49:32.628846"], ["updated_at", "2015-08-26 05:49:32.830236"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["content", "AnnouncementContent10"], ["content_digest", "6a613903eb51b6fe6ab64ec7bca2e08e"], ["created_at", "2015-08-26 05:49:32.832245"], ["is_active", "t"], ["start_at", "2015-08-26 05:49:32.628740"], ["stop_at", "2015-08-29 05:49:32.628846"], ["updated_at", "2015-08-26 05:49:32.832245"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mReadit::Announcement Load (0.2ms)[0m  SELECT "readit_announcements".* FROM "readit_announcements"  WHERE (NOT (id = '1' AND content_digest = 'd2841204c06c8f0c0376febe39225094')) AND (NOT (id = '2' AND content_digest = 'defa9d7af85778ec063b99be9dc63993'))
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["content", "read announcement one initial content"], ["content_digest", "d2841204c06c8f0c0376febe39225094"], ["created_at", "2015-08-26 05:49:32.837254"], ["is_active", "t"], ["start_at", "2015-08-26 05:49:32.628740"], ["stop_at", "2015-08-29 05:49:32.628846"], ["updated_at", "2015-08-26 05:49:32.837254"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["content", "read announcement two initial content"], ["content_digest", "defa9d7af85778ec063b99be9dc63993"], ["created_at", "2015-08-26 05:49:32.839427"], ["is_active", "t"], ["start_at", "2015-08-26 05:49:32.628740"], ["stop_at", "2015-08-29 05:49:32.628846"], ["updated_at", "2015-08-26 05:49:32.839427"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["content", "AnnouncementContent11"], ["content_digest", "226f9fb01fed4a3b2db44c153eeb0e36"], ["created_at", "2015-08-26 05:49:32.841342"], ["is_active", "t"], ["start_at", "2015-08-26 05:49:32.628740"], ["stop_at", "2015-08-29 05:49:32.628846"], ["updated_at", "2015-08-26 05:49:32.841342"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "readit_announcements" SET "content" = ?, "content_digest" = ?, "updated_at" = ? WHERE "readit_announcements"."id" = 1[0m  [["content", "read announcement one updated content"], ["content_digest", "c158250b5b2c13e8e8c70af972ae0cd8"], ["updated_at", "2015-08-26 05:49:32.842893"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mReadit::Announcement Load (0.2ms)[0m  [1mSELECT "readit_announcements".* FROM "readit_announcements"  WHERE (NOT (id = '1' AND content_digest = 'd2841204c06c8f0c0376febe39225094')) AND (NOT (id = '2' AND content_digest = 'defa9d7af85778ec063b99be9dc63993'))  ORDER BY "readit_announcements"."id" ASC[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["content", "AnnouncementContent15"], ["content_digest", "bd827d909122183730be2057f79cf848"], ["created_at", "2015-08-26 05:49:32.861258"], ["is_active", "t"], ["start_at", "2015-08-26 05:49:32.628740"], ["stop_at", "2015-08-29 05:49:32.628846"], ["updated_at", "2015-08-26 05:49:32.861258"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["content", "AnnouncementContent16"], ["content_digest", "a079e6799481804f67d5b7fa9003ad5b"], ["created_at", "2015-08-26 05:49:32.863735"], ["is_active", "t"], ["start_at", "2015-08-26 05:49:32.628740"], ["stop_at", "2015-08-31 05:49:32.862744"], ["updated_at", "2015-08-26 05:49:32.863735"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["content", "AnnouncementContent17"], ["content_digest", "6db22f914f1f5ce73bfcc9df56ebe200"], ["created_at", "2015-08-26 05:49:32.865845"], ["is_active", "t"], ["start_at", "2015-08-26 05:49:32.628740"], ["stop_at", "2015-09-02 05:49:32.864944"], ["updated_at", "2015-08-26 05:49:32.865845"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSELECT MAX("readit_announcements"."stop_at") AS max_id FROM "readit_announcements"  WHERE "readit_announcements"."id" IN (2, 3, 1)[0m
+  [1m[35mReadit::Announcement Load (0.2ms)[0m  SELECT  "readit_announcements".* FROM "readit_announcements"  WHERE "readit_announcements"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[36m (0.5ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["content", "read announcement one initial content"], ["content_digest", "d2841204c06c8f0c0376febe39225094"], ["created_at", "2015-08-26 05:50:53.615598"], ["is_active", "t"], ["start_at", "2015-08-26 05:50:53.485835"], ["stop_at", "2015-08-29 05:50:53.485952"], ["updated_at", "2015-08-26 05:50:53.615598"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["content", "read announcement two initial content"], ["content_digest", "defa9d7af85778ec063b99be9dc63993"], ["created_at", "2015-08-26 05:50:53.621333"], ["is_active", "t"], ["start_at", "2015-08-26 05:50:53.485835"], ["stop_at", "2015-08-29 05:50:53.485952"], ["updated_at", "2015-08-26 05:50:53.621333"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["content", "AnnouncementContent1"], ["content_digest", "c189b74a655de160437fd8270074f844"], ["created_at", "2015-08-26 05:50:53.623340"], ["is_active", "t"], ["start_at", "2015-08-26 05:50:53.485835"], ["stop_at", "2015-08-29 05:50:53.485952"], ["updated_at", "2015-08-26 05:50:53.623340"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "readit_announcements" SET "content" = ?, "content_digest" = ?, "updated_at" = ? WHERE "readit_announcements"."id" = 1  [["content", "read announcement one updated content"], ["content_digest", "c158250b5b2c13e8e8c70af972ae0cd8"], ["updated_at", "2015-08-26 05:50:53.624863"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mReadit::Announcement Load (0.2ms)[0m  SELECT "readit_announcements".* FROM "readit_announcements"  WHERE (NOT (id = '1' AND content_digest = 'd2841204c06c8f0c0376febe39225094')) AND (NOT (id = '2' AND content_digest = 'defa9d7af85778ec063b99be9dc63993'))  ORDER BY "readit_announcements"."id" ASC
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["content", "read announcement one initial content"], ["content_digest", "d2841204c06c8f0c0376febe39225094"], ["created_at", "2015-08-26 05:50:53.632435"], ["is_active", "t"], ["start_at", "2015-08-26 05:50:53.485835"], ["stop_at", "2015-08-29 05:50:53.485952"], ["updated_at", "2015-08-26 05:50:53.632435"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["content", "read announcement two initial content"], ["content_digest", "defa9d7af85778ec063b99be9dc63993"], ["created_at", "2015-08-26 05:50:53.634654"], ["is_active", "t"], ["start_at", "2015-08-26 05:50:53.485835"], ["stop_at", "2015-08-29 05:50:53.485952"], ["updated_at", "2015-08-26 05:50:53.634654"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["content", "AnnouncementContent2"], ["content_digest", "df8a2bbe9d248f87557b1547541b11a9"], ["created_at", "2015-08-26 05:50:53.636500"], ["is_active", "t"], ["start_at", "2015-08-26 05:50:53.485835"], ["stop_at", "2015-08-29 05:50:53.485952"], ["updated_at", "2015-08-26 05:50:53.636500"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "readit_announcements" SET "content" = ?, "content_digest" = ?, "updated_at" = ? WHERE "readit_announcements"."id" = 1[0m  [["content", "read announcement one updated content"], ["content_digest", "c158250b5b2c13e8e8c70af972ae0cd8"], ["updated_at", "2015-08-26 05:50:53.638010"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "readit_announcements" SET "content" = ?, "content_digest" = ?, "updated_at" = ? WHERE "readit_announcements"."id" = 2  [["content", "read announcement two updated content"], ["content_digest", "50defd48776962ec2fabd2affc32b190"], ["updated_at", "2015-08-26 05:50:53.639223"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mReadit::Announcement Load (0.2ms)[0m  SELECT "readit_announcements".* FROM "readit_announcements"  WHERE (NOT (id = '1' AND content_digest = 'd2841204c06c8f0c0376febe39225094')) AND (NOT (id = '2' AND content_digest = 'defa9d7af85778ec063b99be9dc63993'))  ORDER BY "readit_announcements"."id" ASC
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["content", "read announcement one initial content"], ["content_digest", "d2841204c06c8f0c0376febe39225094"], ["created_at", "2015-08-26 05:50:53.643995"], ["is_active", "t"], ["start_at", "2015-08-26 05:50:53.485835"], ["stop_at", "2015-08-29 05:50:53.485952"], ["updated_at", "2015-08-26 05:50:53.643995"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["content", "read announcement two initial content"], ["content_digest", "defa9d7af85778ec063b99be9dc63993"], ["created_at", "2015-08-26 05:50:53.646201"], ["is_active", "t"], ["start_at", "2015-08-26 05:50:53.485835"], ["stop_at", "2015-08-29 05:50:53.485952"], ["updated_at", "2015-08-26 05:50:53.646201"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["content", "AnnouncementContent3"], ["content_digest", "7ca2ed445e1897893246298483871600"], ["created_at", "2015-08-26 05:50:53.648097"], ["is_active", "t"], ["start_at", "2015-08-26 05:50:53.485835"], ["stop_at", "2015-08-29 05:50:53.485952"], ["updated_at", "2015-08-26 05:50:53.648097"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mReadit::Announcement Load (0.2ms)[0m  SELECT "readit_announcements".* FROM "readit_announcements"  WHERE (NOT (id = '1' AND content_digest = 'd2841204c06c8f0c0376febe39225094')) AND (NOT (id = '2' AND content_digest = 'defa9d7af85778ec063b99be9dc63993'))
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["content", "read announcement one initial content"], ["content_digest", "d2841204c06c8f0c0376febe39225094"], ["created_at", "2015-08-26 05:50:53.652952"], ["is_active", "t"], ["start_at", "2015-08-26 05:50:53.485835"], ["stop_at", "2015-08-29 05:50:53.485952"], ["updated_at", "2015-08-26 05:50:53.652952"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["content", "read announcement two initial content"], ["content_digest", "defa9d7af85778ec063b99be9dc63993"], ["created_at", "2015-08-26 05:50:53.655096"], ["is_active", "t"], ["start_at", "2015-08-26 05:50:53.485835"], ["stop_at", "2015-08-29 05:50:53.485952"], ["updated_at", "2015-08-26 05:50:53.655096"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["content", "AnnouncementContent4"], ["content_digest", "01ef2b432ade3af3b4e1980a7abcdef4"], ["created_at", "2015-08-26 05:50:53.656917"], ["is_active", "t"], ["start_at", "2015-08-26 05:50:53.485835"], ["stop_at", "2015-08-29 05:50:53.485952"], ["updated_at", "2015-08-26 05:50:53.656917"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mReadit::Announcement Load (0.2ms)[0m  SELECT "readit_announcements".* FROM "readit_announcements"  WHERE (NOT (id = '1' AND content_digest = 'd2841204c06c8f0c0376febe39225094')) AND (NOT (id = '2' AND content_digest = 'defa9d7af85778ec063b99be9dc63993'))
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["content", "AnnouncementContent7"], ["content_digest", "4af0047a4208a42ca379d0d0923c5423"], ["created_at", "2015-08-26 05:50:53.676955"], ["is_active", "t"], ["start_at", "2015-08-23 05:50:53.675577"], ["stop_at", "2015-08-25 05:50:53.675733"], ["updated_at", "2015-08-26 05:50:53.676955"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["content", "AnnouncementContent8"], ["content_digest", "a09c1e91e221ea1e8d5d36c5582e3149"], ["created_at", "2015-08-26 05:50:53.679688"], ["is_active", "t"], ["start_at", "2015-08-25 05:50:53.678584"], ["stop_at", "2015-08-27 05:50:53.678713"], ["updated_at", "2015-08-26 05:50:53.679688"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["content", "AnnouncementContent9"], ["content_digest", "fcb7d00c5b5ab10ad3ce2e80089500c5"], ["created_at", "2015-08-26 05:50:53.681903"], ["is_active", "t"], ["start_at", "2015-08-27 05:50:53.680894"], ["stop_at", "2015-08-29 05:50:53.681001"], ["updated_at", "2015-08-26 05:50:53.681903"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mReadit::Announcement Load (0.2ms)[0m  SELECT "readit_announcements".* FROM "readit_announcements"  WHERE ('2015-08-26 05:50:53.683099' BETWEEN start_at AND stop_at)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["content", "AnnouncementContent10"], ["content_digest", "6a613903eb51b6fe6ab64ec7bca2e08e"], ["created_at", "2015-08-26 05:50:53.686243"], ["is_active", "t"], ["start_at", "2015-08-26 05:50:53.485835"], ["stop_at", "2015-08-29 05:50:53.485952"], ["updated_at", "2015-08-26 05:50:53.686243"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["content", "AnnouncementContent11"], ["content_digest", "226f9fb01fed4a3b2db44c153eeb0e36"], ["created_at", "2015-08-26 05:50:53.688581"], ["is_active", "t"], ["start_at", "2015-08-26 05:50:53.485835"], ["stop_at", "2015-08-31 05:50:53.687635"], ["updated_at", "2015-08-26 05:50:53.688581"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["content", "AnnouncementContent12"], ["content_digest", "e9fa1cf4a9a5ea30f9592cc4557542ed"], ["created_at", "2015-08-26 05:50:53.690711"], ["is_active", "t"], ["start_at", "2015-08-26 05:50:53.485835"], ["stop_at", "2015-09-02 05:50:53.689782"], ["updated_at", "2015-08-26 05:50:53.690711"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SELECT MAX("readit_announcements"."stop_at") AS max_id FROM "readit_announcements"  WHERE "readit_announcements"."id" IN (2, 3, 1)
+  [1m[36mReadit::Announcement Load (0.2ms)[0m  [1mSELECT  "readit_announcements".* FROM "readit_announcements"  WHERE "readit_announcements"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["content", "AnnouncementContent13"], ["content_digest", "c5a683daf6df218679621f56ee0ce27f"], ["created_at", "2015-08-26 05:50:53.700886"], ["is_active", "t"], ["start_at", "2015-08-26 05:50:53.485835"], ["stop_at", "2015-08-29 05:50:53.485952"], ["updated_at", "2015-08-26 05:50:53.700886"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["content", "AnnouncementContent14"], ["content_digest", "8993c646b2bfca3956d4a3023c781a12"], ["created_at", "2015-08-26 05:50:53.703431"], ["is_active", "f"], ["start_at", "2015-08-26 05:50:53.485835"], ["stop_at", "2015-08-29 05:50:53.485952"], ["updated_at", "2015-08-26 05:50:53.703431"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mReadit::Announcement Load (0.2ms)[0m  SELECT "readit_announcements".* FROM "readit_announcements"  WHERE "readit_announcements"."is_active" = 't'
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "readit_announcements" ("content", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["content", "some content"], ["created_at", "2015-08-26 05:50:53.733362"], ["is_active", "t"], ["start_at", "2015-08-26 05:50:53.485835"], ["stop_at", "2015-08-29 05:50:53.485952"], ["updated_at", "2015-08-26 05:50:53.733362"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "readit_announcements" ("content", "content_digest", "created_at", "is_active", "start_at", "stop_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["content", "some content"], ["content_digest", "9893532233caff98cd083a116b013c0b"], ["created_at", "2015-08-26 05:50:53.737075"], ["is_active", "t"], ["start_at", "2015-08-26 05:50:53.485835"], ["stop_at", "2015-08-29 05:50:53.485952"], ["updated_at", "2015-08-26 05:50:53.737075"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
