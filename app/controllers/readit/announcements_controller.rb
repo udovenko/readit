@@ -34,7 +34,7 @@ module Readit
     # *Arguments*:
     # - +read_announcements+ {Hash} Read announcements hash
     def store_read_announcement(read_announcements)
-      cookies[Rails.configuration.cookies_keys.read_announcements] = {
+      cookies[:readit_announcements] = {
         value: read_announcements.to_json,
         expires: Announcement.latest_stop_at(read_announcements.keys) + 1.day }
     end
