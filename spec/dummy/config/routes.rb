@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
-
-  mount Readit::Engine => "/readit"
+  root 'landing#index'
+  mount Readit::Engine => '/readit'
 end

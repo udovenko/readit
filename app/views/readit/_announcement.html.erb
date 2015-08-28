@@ -1,0 +1,11 @@
+<div class="alert alert-info alert-dismissible" role="alert">
+  <%= announcement.content.html_safe %>
+  <br/>
+  <%= form_for announcement,
+    url: readit.store_reviewed_announcement_path(announcement),
+    method: :post do |form| %>
+    <%= form.hidden_field :content_digest %>
+    <%= form.submit 'Я прочитал(а), не показывать', class: 'btn btn-info pull-right',  role: 'button'%>
+  <% end %>
+  <br clear="all" />
+</div>
