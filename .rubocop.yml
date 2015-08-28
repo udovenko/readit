@@ -1,0 +1,34 @@
+AllCops:
+  Exclude:
+    - db/schema.rb
+
+LineLength:
+  Max: 120
+
+StringLiterals:
+  EnforcedStyle: single_quotes
+
+DotPosition:
+  EnforcedStyle: leading
+
+AsciiComments:
+  Enabled: false
+
+MethodLength:
+  CountComments: false
+  Max: 100
+
+Documentation:
+  Enabled: false
+
+Lint/EndAlignment:
+  AlignWith: variable
+
+Style/AlignParameters:
+  EnforcedStyle: with_fixed_indentation
+
+Style/MultilineOperationIndentation:
+  EnforcedStyle: indented
+
+Style/ColonMethodCall:
+  Enabled: false
