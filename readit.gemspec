@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.summary = 'Simple announcements implementation for applications without authentication.'
   s.description = 'Readit brings simple announcements to your application.'\
     ' It uses cookie to store read announcements data and does not require authentication gems.'\
-    ' Cookie contains content hash for each read announcement so if model was edited after when'\
+    ' Cookie contains content hash for each read announcement so if model was edited when'\
     ' user already read its content, he will see updated announcement again.'
   s.license = 'MIT'
 
