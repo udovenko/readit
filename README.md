@@ -30,7 +30,7 @@ Use **Readit::Announcement** model for CRUD operations with your announcements:
 
 ```ruby
 Readit::Announcement.create {
-  content: '<p><b>Warning!</b> We're temporary stopping sales due to coming Armageddon!</p>',
+  content: "<p><b>Warning!</b> We're temporary stopping sales due to coming Armageddon!</p>",
   start_at: Time.now,
   stop_at: 100.days.from_now,
   is_active: true }
@@ -49,4 +49,20 @@ This will make **@announcements** collection available in your views. Having col
 
 ```ruby
 <%= render partial: 'readit/announcement', collection: @announcements %>
+```
+
+## Registering in ActiveAdmin
+
+If you want to register **Readit** announcements as an **ActiveAdmin** resource, you need to fix resource name in configuration, otherwise you will not be able to create and update models form **ActiveAdmin** form. This issue is related to returning value of **param_key** method which is specific for isolated namespaces. See https://github.com/activeadmin/activeadmin/issues/3161 for details.
+
+Add the following to your resource definition and resource actions should work correctly:
+
+```ruby
+ActiveAdmin.register Readit::Announcement do
+  ...
+
+  controller do
+    resources_configuration[:self][:instance_name] = 'announcement'
+  end
+  ...
 ```
