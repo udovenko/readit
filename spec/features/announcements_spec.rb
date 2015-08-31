@@ -11,6 +11,12 @@ feature 'Announcements' do
     expect(all(Selectors::ANNOUNCEMENT_SELECTOR)[1]).to have_content announcement_two.content
   end
 
+  specify 'announcements have localized button' do
+    expect(page).to have_selector \
+      Selectors::ANNOUNCEMENT_READ_SUBMIT_BUTTON_SELECTOR +
+        "[value=\"#{I18n.t!(:hide_announcement, scope: 'readit.announcement')}\"]"
+  end
+
   context 'user confirmed that he read first announcement' do
     before do
       first(Selectors::ANNOUNCEMENT_READ_SUBMIT_BUTTON_SELECTOR).click

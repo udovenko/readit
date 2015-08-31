@@ -1,4 +1,7 @@
 en:
+  readit:
+    announcement:
+      hide_announcement: "I've read it, don't show again"
   activerecord:
     models:
       readit/announcement:

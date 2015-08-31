@@ -1,7 +1,5 @@
 # Readit
 
-> **In development**
-
 **Readit** brings simple announcements to your application. It uses cookie to store read announcements data and does not require authentication gems. Cookie contains content hash for each read announcement so if model was edited when user already read its content, he will see updated announcement again.
 
 Currently announcements use **Bootstrap** layout, but you can override default partial according to your needs.
@@ -45,7 +43,16 @@ class SomeController < ApplicationController
   include Readit::Announcements
   ...
 ```
-This will make **@announcements** collection available in your views. Having collection available, you can render announcement partial:
+This will make **@announcements** collection available in your views. By default it queries data before each action of controller, so if you have any actions which do not render templates and just redirect user away, it is a good idea to skip callback for them:
+
+```ruby
+  ...
+  include Readit::Announcements
+  skip_before_action :set_announcements, only: [:create, :update]
+  ...
+``` 
+
+Having collection available, you can render announcement partial:
 
 ```ruby
 <%= render partial: 'readit/announcement', collection: @announcements %>
@@ -66,3 +73,24 @@ ActiveAdmin.register Readit::Announcement do
   end
   ...
 ```
+
+## I18n
+
+Gem initially contains some English and Russian translations. Since **Readit** classes are typical models, controllers and views, you can add your own and overwrite existing translations by following **Rails** I18n conventions:
+
+```ruby
+en:
+  readit:
+    announcement:
+      hide_announcement: "I've read it, don't show again"
+  ...    
+```
+See **config/locales/en.yml** and **config/locales/ru.yml** form more examples.
+
+## Contributing
+
+1. Fork it ( https://github.com/udovenko/readit/fork )
+2. Create your feature branch (`git checkout -b my-new-feature`)
+3. Commit your changes (`git commit -am 'Add some feature'`)
+4. Push to the branch (`git push origin my-new-feature`)
+5. Create a new Pull Request

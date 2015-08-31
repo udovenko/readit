@@ -1,4 +1,7 @@
 ru:
+  readit:
+    announcement:
+      hide_announcement: "Я прочитал(а), не показывать"
   activerecord:
     models:
       readit/announcement:
