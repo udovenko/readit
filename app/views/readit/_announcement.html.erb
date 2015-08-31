@@ -5,7 +5,7 @@
     url: readit.store_reviewed_announcement_path(announcement),
     method: :post do |form| %>
     <%= form.hidden_field :content_digest %>
-    <%= form.submit t '.hide_announcement', class: 'btn btn-info pull-right',  role: 'button'%>
+    <%= form.submit t('.hide_announcement'), class: 'btn btn-info pull-right',  role: 'button'%>
   <% end %>
   <br clear="all" />
 </div>

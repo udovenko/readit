@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    readit (1.0.0)
+    readit (1.0.1)
 
 GEM
   remote: https://rubygems.org/
